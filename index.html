@@ -1,0 +1,142 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+    
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.3.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="js/jquery.mobile-1.4.3.js"></script>
+    <script src="/socket.io/socket.io.js"></script> 
+    
+    
+    <!--<input type="text" onkeyup="keyup()">
+    <input type="text" onkeydown="keydown()">-->
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style type="text/css">
+			html, body { margin:0; padding:0; }
+    </style>
+    
+	<title>Your New Application</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<style type="text/css">
+		/* Prevent copy paste for all elements except text fields */
+		*  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
+		input, textarea  { -webkit-user-select:text; }
+		body { background-color:white; color:black }
+	</style>
+	<script src='intelxdk.js'></script>
+	<!-- <script type="text/javascript">
+		/* Intel native bridge is available */
+		var onDeviceReady=function(){
+		//hide splash screen
+		intel.xdk.device.hideSplashScreen();
+		};
+		document.addEventListener("intel.xdk.device.ready",onDeviceReady,false);
+	</script> -->
+</head>
+<body>
+
+
+    
+
+
+   
+
+
+
+
+    <div data-role="page" id="pageone">
+        
+        <div class="fb-like"
+             data-send="true"
+             data-width="450"
+             data-show-faces="true">
+        </div>
+
+  <div data-role="main" class="ui-content">
+      <img src="images/Little%20Tank%20Title.png" id="Title" style="width:100%; height:100%;">
+
+						<style>
+							#Title {position: fixed;}
+                            #Start {position: fixed;}
+						</style>
+      
+      <div id="div" style="position: absolute; top: 50%; left: 65%;">
+      <a onclick="startGame()" href="#pagetwo" id='Start'  class="ui-btn" style="width:20%; height:10%; font-size:300%">Start</a>
+    </div>
+      
+  </div>
+
+  
+</div> 
+
+<div data-role="page" id="pagetwo">
+  
+
+  <div data-role="main" class="ui-content">
+      <canvas id="canvas" style="z-index:1"></canvas>
+                            <style>
+							#canvas {position: fixed;}
+                            </style>
+
+      
+
+      <!--<div>
+          <form id="send-message" style="width:100px">
+              <input type="text" id="message" style="z-index:101; position:absolute; top:10px; left:10px;" />
+              <input type="submit" value="Send" style="z-index:101; position:absolute; top:100px; left:200px;">
+          </form>
+      </div>-->
+      
+
+      <!-- <script>
+    jQuery(function ($) {
+        var socket = io.connect();
+        var $messageForm = $('#send-message');
+        var $messageBox = $('#message');
+        var $chat = $('#chat');
+
+        $messageForm.submit(function (e) {
+            e.preventDefault();
+            //send message
+            data = me + $messageBox.val();
+            socket.emit('send message', data);
+            $messageBox.val('');
+            data = data.replace(me, '')
+            $chat.append('Me: '+data + "<br/>");
+        });
+
+
+        //receive and write message
+        socket.on('new message', function (data) {
+
+            if (data.indexOf(me) == '-1') {
+                data = data.replace(player2, '');
+                $chat.append(player+': '+data + "<br/>");
+            }
+
+
+        });
+
+        
+            
+        });
+
+      </script> -->
+<!-- 
+      <div id="chat" style="z-index:3; position:relative;"></div> -->
+
+     <!--  <audio controls="controls" loop="loop" autoplay="autoplay" hidden="hidden" id="audio">
+          <source src="music/kurt-walther_energy.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio> --> 
+      
+
+  </div>
+
+  
+</div> 
+</body>
+</html>
